@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
-.body{
+.body {
   padding: 0px;
   margin: 0px;
-   
+
 }
 
 
 
- p{
+p {
   line-height: 30px;
- }
+}
+
+

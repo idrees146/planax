@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className='flex md:flex-row flex-col text-center md:text-start md:mt-28  pb-10 bg-gradient-to-r from-blue-800 to-purple-800   mt-20 justify-between text-white items-center'>
+        <footer className='flex md:flex-row bottom-0 flex-col text-center md:text-start md:mt-28  pb-10 bg-gradient-to-r from-blue-800 to-purple-800   mt-20 justify-between text-white items-center'>
 
             <div className="logo-section md:w-[400px] md:ml-20">
 

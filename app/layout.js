@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./Components/Footer";
+ 
+ import Navbar from "./Components/Navbar";
 
  
 
@@ -34,6 +36,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-gradient-to-r from-[#0B0E1E] via-[#131838]  to-[#132251]` }
       >
+
+    <Navbar/>  
+  
         {children}
 
 
