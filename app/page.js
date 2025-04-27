@@ -242,7 +242,7 @@ export default function Home() {
             viewport={{ once: true }}
 
           >
-            <div className="box text-center md:my-7 cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#030D4D] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[250px] md:w-[300px] w-[90vw] h-[250px]   p-4 ">
+            <div className="box text-center md:my-7 cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#030D4D] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[280px] md:w-[250px] lg:h-[250px] lg:w-[300px] w-[90vw] h-[250px]   p-4 ">
 
               <img src="pricing.png" width={45} alt="" />
 
@@ -262,7 +262,7 @@ export default function Home() {
             viewport={{ once: true }}
 
           >
-            <div className="box md:my-7 text-center cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#030D4D] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[250px] md:w-[300px] w-[90vw] h-[250px]   p-4 ">
+            <div className="box md:my-7 text-center cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#030D4D] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[280px] md:w-[250px] lg:h-[250px] lg:w-[300px] w-[90vw] h-[250px]   p-4 ">
 
               <img src="plan.png" width={45} alt="" />
 
@@ -283,7 +283,7 @@ export default function Home() {
             viewport={{ once: true }}
 
           >
-            <div className="box text-center md:my-7 cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#20285e] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[250px] md:w-[300px] w-[90vw] h-[250px]   p-4 ">
+            <div className="box text-center md:my-7 cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#20285e] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[280px] md:w-[250px] lg:h-[250px] lg:w-[300px] w-[90vw] h-[250px]   p-4 ">
 
               <img src="dashboard.png" width={45} alt="" />
 
@@ -324,7 +324,7 @@ export default function Home() {
 
           >
 
-            <div className="box text-center md:my-7 cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#030D4D] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[250px] md:w-[300px] w-[90vw] h-[250px]    p-4 ">
+            <div className="box text-center md:my-7 cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#030D4D] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[280px] md:w-[250px] lg:h-[250px] lg:w-[300px] w-[90vw] h-[250px]    p-4 ">
 
               <img src="assignment.png" width={45} alt="" />
 
@@ -348,7 +348,7 @@ export default function Home() {
 
           >
 
-            <div className="box md:my-7 text-center cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#030D4D] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[250px] md:w-[300px] w-[90vw] h-[250px]    p-4 ">
+            <div className="box md:my-7 text-center cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#030D4D] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[280px] md:w-[250px] lg:h-[250px] lg:w-[300px] w-[90vw] h-[250px]    p-4 ">
 
               <img src="freelancer.png" width={45} alt="" />
 
@@ -369,7 +369,7 @@ export default function Home() {
 
           >
 
-            <div className="box text-center md:my-7 cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#20285e] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[250px] md:w-[300px]  w-[90vw] h-[250px]   p-4 ">
+            <div className="box text-center md:my-7 cursor-pointer hover:shadow-white hover:shadow-md md:hover:my-3 transition-all duration-500 flex flex-col bg-gradient-to-r from-[#20285e] via-[#381566] to-[#4d72cf]  items-center justify-center rounded-xl md:h-[280px] md:w-[250px] lg:h-[250px] lg:w-[300px]  w-[90vw] h-[250px]   p-4 ">
 
               <img src="dashboard.png" width={45} alt="" />
 
@@ -394,7 +394,7 @@ export default function Home() {
 
 
 
-      <section className="text-white my-20 md:my-28 flex flex-col md:flex-row   gap-10 justify-center items-center">
+      <section className="text-white my-20 md:my-28 flex flex-col md:flex-row md:p-10  gap-10 justify-center items-center">
 
         <div className="left md:w-1/2">
 
