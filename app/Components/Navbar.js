@@ -80,7 +80,7 @@ const Navbar = () => {
 
                         <Link href="/">    <li className='cursor-pointer hidden md:block hover:underline transition duration-400'>Home</li></Link>
 
-                        <li className='cursor-pointer hidden md:block hover:underline transition duration-400'> Pricing</li>
+                        <Link href="/Pricing">  <li className='cursor-pointer hidden md:block hover:underline transition duration-400'> Pricing</li></Link>
 
 
                         <Link href="/About"><li className='cursor-pointer hidden md:block hover:underline transition duration-400'>About</li></Link>
@@ -96,8 +96,8 @@ const Navbar = () => {
 
                 <div className="right flex gap-4 mr-4 text-white">
 
-                    <button className='bg-blue-200/30 hidden md:block hover:bg-white/40 cursor-pointer rounded-lg px-2 py-1'>Demo</button>
-                    <button className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600   hover:bg-blue-500 cursor-pointer rounded-lg px-2 py-1'>Join Now</button>
+                   
+                    <button className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600   hover:bg-blue-500 cursor-pointer rounded-lg p-2'>Sign in</button>
 
                 </div>
 
@@ -140,11 +140,11 @@ const Navbar = () => {
 
                         Home</li> </button> </Link>
 
-                    <button onClick={closeSidebar}>   <li className='cursor-pointer mt-3 flex items-center gap-2   hover:underline transition duration-400'>
+                 <Link href="/Pricing">  <button onClick={closeSidebar}>   <li className='cursor-pointer mt-3 flex items-center gap-2   hover:underline transition duration-400'>
 
                         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#75FBFD"><path d="M880-733.33v506.66q0 27-19.83 46.84Q840.33-160 813.33-160H146.67q-27 0-46.84-19.83Q80-199.67 80-226.67v-506.66q0-27 19.83-46.84Q119.67-800 146.67-800h666.66q27 0 46.84 19.83Q880-760.33 880-733.33ZM146.67-634h666.66v-99.33H146.67V-634Zm0 139.33v268h666.66v-268H146.67Zm0 268v-506.66 506.66Z" /></svg>
 
-                        Plans and Pricing</li> </button>
+                        Plans and Pricing</li> </button></Link> 
 
 
                     <Link href="/About">   <button onClick={closeSidebar}>   <li className='cursor-pointer mt-3 flex items-center gap-2  hover:underline transition duration-400'>

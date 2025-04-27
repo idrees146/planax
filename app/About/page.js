@@ -1,4 +1,5 @@
 import React from 'react'
+ 
 
 
 const page = () => {
@@ -13,28 +14,37 @@ const page = () => {
 
                 <div className="flex gap-8 flex-col md:flex-row justify-center items-center">
 
-                    <div className="left w-[90vw] md:w-1/2">
-
-                        <h1 className=' font-bold md:text-4xl    text-2xl'>A little of my Story</h1>
-
-
-                        <p className='leading-7 mt-5'>This is <span className='font-bold text-green-400'>Muhammad Idrees</span> , a passionate Web Developer, always busy in creating some fun and interesting projects. Currently, I am studying Bachelors in Software Engineering From Comsats University Islamabad.
-                        </p>
-
-
-                        <p className='leading-7 mt-5'>
-                            I started my Career as a freelance writer back in 2019, during covid Pandemic and have achieved significant growth so far Alhmdulillah (Abviously downfalls too hahah). I've been working with clients both international and local, helping me to build a strong portfolio and reputation
-                        </p>
-
-                        <p className='leading-7 mt-5'>
-                            With the passage of time, I started my youtube Channel on the name <span className='font-bold text-green-400'>Alinaid Institution</span>, where I used to teach practical ways to make money using freelance writing and Web Development. Currently, I also have a digital startup <span className='font-bold text-green-400'>ShaziSoft Solutions</span>
-                        </p>
 
 
 
-                    </div>
+                    
 
 
+
+                        <div className="left w-[90vw] md:w-1/2">
+
+                            <h1 className=' font-bold md:text-4xl    text-2xl'>A little of my Story</h1>
+
+
+                            <p className='leading-7 mt-5'>This is <span className='font-bold text-green-400'>Muhammad Idrees</span> , a passionate Web Developer, always busy in creating some fun and interesting projects. Currently, I am studying Bachelors in Software Engineering From Comsats University Islamabad.
+                            </p>
+
+
+                            <p className='leading-7 mt-5'>
+                                I started my Career as a freelance writer back in 2019, during covid Pandemic and have achieved significant growth so far Alhmdulillah (Abviously downfalls too hahah). I've been working with clients both international and local, helping me to build a strong portfolio and reputation
+                            </p>
+
+                            <p className='leading-7 mt-5'>
+                                With the passage of time, I started my youtube Channel on the name <span className='font-bold text-green-400'>Alinaid Institution</span>, where I used to teach practical ways to make money using freelance writing and Web Development. Currently, I also have a digital startup <span className='font-bold text-green-400'>ShaziSoft Solutions</span>
+                            </p>
+
+
+
+                        </div>
+
+          
+
+                    
                     <div className="right">
                         <img className='md:w-72 w-[90vw] rounded-xl' src="me.jpeg" alt="" />
                     </div>
