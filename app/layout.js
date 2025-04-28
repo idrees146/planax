@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 const poppins = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // you can include weights you need
+  weight: ["400", "500", "600", "700"], 
 });
 
 export const metadata = {
-  title: "Planax",
+  title: "Planax - Be Productive",
   description: "Planax is your go to use productivity app, helping you manage your daily tasks, projects, clients and even habits in the most effective and organized way",
 };
 

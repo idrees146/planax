@@ -9,9 +9,9 @@ const page = () => {
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                         <h2 className="mb-4 text-4xl tracking-tight font-extrabold  text-white  ">Plans and <span className='text-green-400'>Pricing</span></h2>
-                        <p className="mb-5 font-light  sm:text-xl  0">We Provide cheapest and most affordable pricing to our customer to enable them use our product for effective time management</p>
+                        <p className="mb-5 font-light  sm:text-xl  0">The Planax is absolutely free for now, so utilize its powers in creating the most effective schedules for yourself</p>
                     </div>
-
+{/* 
                     <div className="space-y-8 lg:grid lg:grid-cols-3  sm:gap-6 xl:gap-10 lg:space-y-0">
 
                         <div className="flex flex-col p-6 mx-auto max-w-lg text-center   text-white bg-blue-400/20 rounded-lg   shadow dark:border-gray-600 xl:p-8  ">
@@ -126,8 +126,8 @@ const page = () => {
                                 </li>
                             </ul>
                             <a href="#" className="text-white bg-gradient-to-r from-blue-800 to-purple-800 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
-                        </div>
-                    </div>
+                        </div> */}
+                    {/* </div> */}
                 </div>
             </section>
 

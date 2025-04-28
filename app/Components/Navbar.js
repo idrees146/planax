@@ -97,7 +97,7 @@ const Navbar = () => {
                 <div className="right flex gap-4 mr-4 text-white">
 
                    
-                    <button className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600   hover:bg-blue-500 cursor-pointer rounded-lg p-2'>Sign in</button>
+                 <Link href="/Login">  <button className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600   hover:bg-blue-500 cursor-pointer rounded-lg p-2'>Sign in</button></Link> 
 
                 </div>
 
