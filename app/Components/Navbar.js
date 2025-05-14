@@ -2,15 +2,47 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import Gotham from './Gotham'
+import { supaBase } from '@/lib/supabaseClient'
+import { useRouter } from 'next/navigation'
+
+
 
 
 
 
 const Navbar = () => {
 
+const router = useRouter();
 
+    const [session, setSession] = useState(null)
+
+    useEffect(() => {
+        // Get initial session
+        const getSession = async () => {
+            const { data: { session } } = await supaBase.auth.getSession()
+            setSession(session)
+        }
+
+        getSession()
+
+        // Listen to session changes (login/logout)
+        const {
+            data: { subscription },
+        } = supaBase.auth.onAuthStateChange((_event, session) => {
+            setSession(session)
+        })
+
+        return () => subscription.unsubscribe()
+    }, [])
+
+
+    useEffect(() => {
+        if (!session) {
+            router.push('/Login')
+        }
+    }, [session])
 
 
     //SideBar logic
@@ -46,12 +78,63 @@ const Navbar = () => {
         setSideBar("-left-[100vw]")
     }
 
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    const [Drive, setDrive] = useState(false)
+    //Drive To Gotham
+
+    const driveCar = () => {
+        setDrive(true)
+        setIsOpen(true)
+        window.scrollTo({ top: 0, behaviour: "smooth" })
+
+
+
+    }
+
+
+    const [showDropdown, setShowDropdown] = useState(false);
+    const dropdownRef = useRef(null);
+
+    // Close dropdown if clicked outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setShowDropdown(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+
     return (
         <>
 
+{showDropdown && (
+                    <div ref={dropdownRef} className='absolute group top-20 md:top-25 right-0 md:right-10  bg-white text-black rounded-lg shadow-md p-3 w-40 z-50'>
+                        <ul className='space-y-2'>
+                            <li className='hover:bg-gray-100 p-2 rounded cursor-pointer'>Profile</li>
+                            <li className='hover:bg-gray-100 p-2 rounded cursor-pointer'>Settings</li>
+                            <li
+                                onClick={async () => {
+                                    await supaBase.auth.signOut()
+                                    setSession(null)
+                                    setShowDropdown(false)
+                                }}
+                                className='hover:bg-gray-100 p-2 rounded cursor-pointer text-red-600'
+                            >
+                                Logout
+                            </li>
+                        </ul>
+                    </div>
+                )}
 
-
-
+            <Gotham isOpen={isOpen} setIsOpen={setIsOpen} setDrive={setDrive} />
 
 
             <div className={`Navbar   backdrop-blur-lg mx-auto flex items-center  justify-between rounded-lg  bg-white/20 md:w-[92vw] h-20 md:mt-4`}>
@@ -78,8 +161,13 @@ const Navbar = () => {
 
                     <ul className='flex gap-3 lg:gap-7 font-bold text-white'>
 
-                        <Link href="/">    <li className='cursor-pointer hidden md:block hover:underline transition duration-400'>Home</li></Link>
+                        {!session && (
+                            <Link href="/">    <li className='cursor-pointer hidden md:block hover:underline transition duration-400'>Home</li></Link>
+                        )}
 
+                        {session && (
+                            <Link href="/Dashboard">    <li className='cursor-pointer hidden md:block hover:underline transition duration-400'>Dashboard</li></Link>
+                        )}
                         <Link href="/Pricing">  <li className='cursor-pointer hidden md:block hover:underline transition duration-400'> Pricing</li></Link>
 
 
@@ -89,19 +177,40 @@ const Navbar = () => {
                         <Link href="/Contact">  <li className='cursor-pointer hidden md:block hover:underline transition duration-400'>Contact</li></Link>
 
 
+
                     </ul>
 
                 </div>
 
 
-                <div className="right flex gap-4 mr-4 text-white">
+                <div className="right  flex gap-4 mr-4 text-white">
 
-                   
-                 <Link href="/Login">  <button className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600   hover:bg-blue-500 cursor-pointer rounded-lg p-2'>Sign in</button></Link> 
+
+                    {!session && (
+
+                        <Link href="/Login">  <button className='bg-gradient-to-r  from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600   hover:bg-blue-500 cursor-pointer rounded-lg p-2'>Sign in</button></Link>
+                    )}
+
+                    {session && (
+                        <button onClick={driveCar} className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600   hover:bg-blue-500 cursor-pointer rounded-lg p-2'>Gotham</button>
+                    )}
+
+                    {session && (
+                        <button onClick={() => setShowDropdown(!showDropdown)} className='    cursor-pointer w-10 flex justify-center rounded-full bg-white/30'> <img width={30} height={30} src="user.svg" alt="" /></button>
+
+
+                    )}
+
+
+
+
 
                 </div>
 
 
+
+               
+ 
             </div>
 
 
@@ -140,11 +249,11 @@ const Navbar = () => {
 
                         Home</li> </button> </Link>
 
-                 <Link href="/Pricing">  <button onClick={closeSidebar}>   <li className='cursor-pointer mt-3 flex items-center gap-2   hover:underline transition duration-400'>
+                    <Link href="/Pricing">  <button onClick={closeSidebar}>   <li className='cursor-pointer mt-3 flex items-center gap-2   hover:underline transition duration-400'>
 
                         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#75FBFD"><path d="M880-733.33v506.66q0 27-19.83 46.84Q840.33-160 813.33-160H146.67q-27 0-46.84-19.83Q80-199.67 80-226.67v-506.66q0-27 19.83-46.84Q119.67-800 146.67-800h666.66q27 0 46.84 19.83Q880-760.33 880-733.33ZM146.67-634h666.66v-99.33H146.67V-634Zm0 139.33v268h666.66v-268H146.67Zm0 268v-506.66 506.66Z" /></svg>
 
-                        Plans and Pricing</li> </button></Link> 
+                        Plans and Pricing</li> </button></Link>
 
 
                     <Link href="/About">   <button onClick={closeSidebar}>   <li className='cursor-pointer mt-3 flex items-center gap-2  hover:underline transition duration-400'>

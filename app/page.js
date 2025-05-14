@@ -1,10 +1,11 @@
 'use client';
- 
+
 import "./globals.css"; // make sure you import your CSS here
 import Image from "next/image";
- 
+import Link from "next/link";
+
 import { motion } from "framer-motion";
- 
+
 
 export default function Home() {
 
@@ -24,14 +25,14 @@ export default function Home() {
 
 
 
- 
+
 
 
   return (
     <>
- 
 
-     
+
+
 
       <div onClick={handleScroll} className="move sticky w-10 float-right top-[86vh] right-[20px] rounded-lg  cursor-pointer bg-black">
         <img src="up.svg" alt="" />
@@ -83,9 +84,9 @@ export default function Home() {
               Your all-in-one productivity app to boost up your productivity and help you manage your day-to-day tasks effectively.
             </p>
 
-            <button className='  bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 mx-auto mt-10 hover:bg-blue-500 cursor-pointer rounded-lg p-3 flex gap-2 items-center justify-center'>
+            <Link href="/Login"> <button className='  bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 mx-auto mt-10 hover:bg-blue-500 cursor-pointer rounded-lg p-3 flex gap-2 items-center justify-center'>
               <img src="task-actions.png" width={30} alt="" />
-              Launch Planax</button>
+              Launch Planax</button></Link>
           </div>
 
 

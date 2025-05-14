@@ -1,8 +1,10 @@
 
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Orbitron, Audiowide } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+ 
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +23,19 @@ const poppins = Inter({
   weight: ["400", "500", "600", "700"], 
 });
 
+
+export const audioWide = Audiowide({
+  variable: "--font-audio-wide",
+  subsets: ["latin"],
+  weight: ["400"] ,
+});
+
+export const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], 
+});
+
 export const metadata = {
   title: "Planax - Be Productive",
   description: "Planax is your go to use productivity app, helping you manage your daily tasks, projects, clients and even habits in the most effective and organized way",
@@ -32,10 +47,12 @@ export default function RootLayout({ children }) {
 
      
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-gradient-to-r from-[#0B0E1E] via-[#131838]  to-[#132251]` }
+        className={`${geistSans.variable} ${audioWide.variable} ${geistMono.variable} ${poppins.variable} ${orbitron.variable} antialiased bg-gradient-to-r from-[#0B0E1E] via-[#131838]  to-[#132251]` }
       >
 
     <Navbar/>  
+  
+ 
   
         {children}
 

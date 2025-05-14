@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className='flex md:flex-row bottom-0 flex-col text-center md:text-start md:mt-28  pb-10 bg-gradient-to-r from-blue-800 to-purple-800   mt-20 justify-between text-white items-center'>
+        <footer className='flex md:flex-row  bottom-0 flex-col text-center md:text-start md:mt-28  pb-10 bg-gradient-to-r from-blue-800 to-purple-800   mt-20 justify-between text-white items-center'>
 
             <div className="logo-section md:w-[400px] md:ml-20">
 
@@ -24,13 +24,13 @@ const Footer = () => {
             <div className="navigations flex flex-col j justify-start items-center my-10 md:items-start gap-4">
 
 
-              <button className='cursor-pointer hover:underline'>About us</button> 
-              <button className='cursor-pointer hover:underline'>Contact us</button>
-              <button className='cursor-pointer hover:underline'>Become Partner</button>
-              <button className='cursor-pointer hover:underline'> Get Started</button>
-            
-                
-               
+                <button className='cursor-pointer hover:underline'>About us</button>
+                <button className='cursor-pointer hover:underline'>Contact us</button>
+                <button className='cursor-pointer hover:underline'>Become Partner</button>
+                <button className='cursor-pointer hover:underline'> Get Started</button>
+
+
+
 
 
             </div>

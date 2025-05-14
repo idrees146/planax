@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* In app/globals.css */
+
+
 
 .body {
   padding: 0px;
@@ -11,6 +14,25 @@
 p {
   line-height: 30px;
 }
+
+
+@media only screen and (min-width: 810px) and (max-width: 1024px) {
+ .map{
+
+  height: calc(60vw + 150px);
+ }
+}
+
+
+.font-orbitron{
+  font-family: var(--font-orbitron);
+}
+
+
+.font-audiowide{
+  font-family: var(--font-audio-wide);
+}
+
 
 
  
