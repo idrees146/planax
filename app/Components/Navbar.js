@@ -142,7 +142,7 @@ const router = useRouter();
                 <div className="left flex items-center justify-center">
 
 
-                    <button onClick={handleSideBar}>  <svg xmlns="http://www.w3.org/2000/svg" className='ml-1 md:hidden' height="40px" viewBox="0 -960 960 960" width="40px" fill="#75FBFD"><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" /></svg></button>
+                    <button onClick={handleSideBar}>  <svg xmlns="http://www.w3.org/2000/svg" className='ml-10 md:hidden' height="40px" viewBox="0 -960 960 960" width="40px" fill="#75FBFD"><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" /></svg></button>
 
 
                     <Image
@@ -192,7 +192,7 @@ const router = useRouter();
                     )}
 
                     {session && (
-                        <button onClick={driveCar} className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600   hover:bg-blue-500 cursor-pointer rounded-lg p-2'>Gotham</button>
+                        <button onClick={driveCar} className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600   hover:bg-blue-500 cursor-pointer rounded-lg p-2'>Map</button>
                     )}
 
                     {session && (
@@ -229,10 +229,10 @@ const router = useRouter();
                 <div className="flex items-center justify-between">
                     <img width={180} src="logo2.png" alt="" />
 
-                    <button onClick={handleSideBar} className="mr-2 ">
+                    <button onClick={handleSideBar} className="mr-3 ">
 
 
-                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#75FBFD"><path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className='' height="40px" viewBox="0 -960 960 960" width="40px" fill="#75FBFD"><path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z" /></svg>
 
 
                     </button>

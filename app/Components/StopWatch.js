@@ -41,7 +41,7 @@ const StopWatch = () => {
   };
 
   return (
-    <div className="box bg-white/20 border transition-all duration-300 flex flex-col justify-center items-center rounded-2xl p-6 w-full h-[250px] md:h-[250px] lg:w-[30vw] text-center">
+    <div className="">
       <p className="text-xl font-semibold mb-4">Deep Focused <span className="text-green-400">Work Session</span></p>
 
  

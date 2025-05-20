@@ -4,9 +4,14 @@ import React from 'react'
 import { AnimatePresence, motion, vw } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import StopWatch from '../Components/StopWatch'
- import Gotham from '../Components/Gotham'
- import { supaBase } from '@/lib/supabaseClient'
+import Gotham from '../Components/Gotham'
+import { supaBase } from '@/lib/supabaseClient'
 import { useRouter } from 'next/navigation'
+import Calendar from '../Components/Calendar'
+import Tasks from '../Components/Tasks'
+
+
+
 
 const Page = () => {
 
@@ -24,7 +29,7 @@ const Page = () => {
     }
 
 
-   
+
 
     const [isMobile, setIsMobile] = useState(false);
 
@@ -55,8 +60,20 @@ const Page = () => {
         getUser()
     }, [])
 
+
+
+    // State Lifting nhi blke Date Lifting hai bhai ye tho 
+
+    const [selectedDate, setSelectedDate] = useState(new Date().getDate());
+    const [month, setMonth] = useState(new Date().getMonth()+1)
+    const [year, setYear] = useState(new Date().getFullYear());
+
+
+
     return (
-        <section className="main text-white flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-10 px-4 py-8">
+        <section className="main text-white flex flex-col lg:flex-row justify-center  lg:items-start items-center   gap-5 px-4 py-8">
+
+
 
 
 
@@ -64,118 +81,33 @@ const Page = () => {
 
 
             {/* Left Section */}
-            <div className="left flex flex-col gap-6 w-full lg:h-screen xl:ml-10 lg:w-2/3 xl:w-1/2">
-
-                {/* Upper Boxes */}
+            <div className="left w-full  bg-white/20 rounded-2xl md:w-3/4  xl:ml-10 lg:w-2/3  ">
 
 
-                <AnimatePresence>
-
-                    {!Drive && (
-
-
-
-                        <motion.div
-
-                            initial={{ y: 0, opacity: 1 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -10, opacity: 0 }}
-                            transition={{ type: "spring", stiffness: 100 }}
-
-
-                        >
-                            <div className="upper flex flex-col md:flex-row items-center justify-center gap-6">
-
-                                {/* Weekly Assignments */}
-                                <div className="box cursor-pointer  w-full md:w-1/2 bg-white/20 border border-white rounded-2xl p-4 overflow-auto h-60">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <img width={35} src="assignment.png" alt="Assignment" />
-                                        <h2 className="font-bold">Weekly Assignments</h2>
-                                    </div>
-                                    <hr className="border-white mb-2" />
-                                    <p>DSA Assignment3 - 24 April 2025</p>
-                                    <p>DSA Assignment3 - 24 April 2025</p>
-                                    <p>DSA Assignment3 - 24 April 2025</p>
-                                </div>
-
-                                {/* Weekly Quizzes */}
-                                <div className="box cursor-pointer   shadow-lg w-full md:w-1/2 bg-white/20 border border-white rounded-2xl p-4 overflow-auto h-60">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <img width={35} src="plan.png" alt="Quiz" />
-                                        <h2 className="font-bold">Weekly Quizzes</h2>
-                                    </div>
-                                    <hr className="border-white mb-2" />
-                                    <p>DSA Assignment3 - 24 April 2025</p>
-                                    <p>DSA Assignment3 - 24 April 2025</p>
-                                    <p>DSA Assignment3 - 24 April 2025</p>
-                                </div>
-
-                            </div>
-
-
-                        </motion.div>
-
-                    )}
-                </AnimatePresence>
-
-                {/* Lower Boxes */}
+                <Calendar setSelectedDate={setSelectedDate} setYear={setYear} setMonth={setMonth} />
 
 
 
 
-                <AnimatePresence>
-
-                    {!Drive && (
 
 
-
-                        <motion.div
-
-                            initial={{ y: 0, opacity: 1 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: 10, opacity: 0 }}
-                            transition={{ type: "spring", stiffness: 100 }}
+            </div>
 
 
-                        >
-                            <div className="lower flex flex-col md:flex-row items-center justify-center gap-6">
+            <div className="center   w-full lg:h-[90vh] bg-white/20 rounded-2xl ">
 
-                                {/* Project Deadlines */}
-                                <div className="box cursor-pointer   w-full md:w-1/2 bg-white/20 border border-white rounded-2xl p-4 overflow-auto h-60">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <img width={35} src="freelancer.png" alt="Project" />
-                                        <h2 className="font-bold">Project Deadlines</h2>
-                                    </div>
-                                    <hr className="border-white mb-2" />
-                                    <p>DSA Assignment3 - 24 April 2025</p>
-                                    <p>DSA Assignment3 - 24 April 2025</p>
-                                    <p>DSA Assignment3 - 24 April 2025</p>
-                                </div>
+            <div className="flex items-center mt-4 gap-5 ml-4">
+                    <img src="plan.png" className='w-10' alt="" />
 
-                                {/* Quick Notes */}
-                                <div className="box cursor-pointer    w-full md:w-1/2 bg-white/20 border border-white rounded-2xl p-4 h-60 flex flex-col justify-between">
-                                    <div className="flex justify-between items-center mb-2">
-                                        <div className="flex items-center gap-2">
-                                            <img width={35} src="diary.png" alt="Notes" />
-                                            <h2 className="font-bold">Quick Notes</h2>
-                                        </div>
-                                        <button className="flex cursor-pointer items-center gap-2 bg-gradient-to-r from-blue-800 to-purple-800 hover:to-purple-500 text-white p-2 rounded-md text-sm">
-                                            <img width={20} src="add.svg" alt="Add" />
-                                            Add
-                                        </button>
-                                    </div>
-                                    <hr className="border-white mb-2" />
-                                    <textarea placeholder="Enter your short notes here" className="bg-slate-900 text-green-300 p-2 rounded-xl text-sm h-28 resize-none"></textarea>
-                                </div>
+                    <h3 className='text-xl font-bold'> Tasks For: <span className="text-green-300 font-bold"> {`${selectedDate + "-" + month + "-" + year}`} </span> </h3>
+                </div>
 
-                            </div>
+                <hr className='my-5 w-[95%] mx-auto' />
 
-
-
-                        </motion.div>
-
-                    )}
-                </AnimatePresence>
+                <div className='overflow-y-auto w-full  lg:h-[73vh]   rounded-2xl custom-scrollbar '>
+                <Tasks year={year} selectedDate={selectedDate} month={month} />
+                </div>
+                
 
             </div>
 
@@ -185,12 +117,12 @@ const Page = () => {
 
 
             {/* Right Section */}
-            <div className="right flex md:h-screen flex-col items-center w-full lg:w-1/3  gap-8">
+            <div className="right flex lg:h-screen flex-col items-center w-1/3    gap-12">
 
                 {/* Image and Button */}
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center  gap-10">
 
-                    <div className=' md:w-96  z-0 '>
+                    <div className=' md:w-[70vw]   lg:w-96 w-[85vw] z-0 '>
 
 
 
@@ -229,7 +161,7 @@ const Page = () => {
                         >
 
 
-                            <img src="batmob.png" className={`md:w-80 mx-auto     drop-shadow-xl drop-shadow-gray-300 transition-all duration-500`} alt="Batmobile" />
+                            <img src="batmob.png" className={`md:w-80 mx-auto w-[90vw]    drop-shadow-xl drop-shadow-gray-300 transition-all duration-500`} alt="Batmobile" />
                         </motion.div>
 
 
@@ -239,44 +171,38 @@ const Page = () => {
 
 
 
-                    <AnimatePresence>
-
-                        <motion.div
-
-                            initial={{ x: 0, opacity: 1 }}
-                            animate={{ x: 0, opacity: Drive ? 0 : 1 }}
-                        >
-
-
-                           
 
 
 
-                        </motion.div>
-                    </AnimatePresence>
 
 
                 </div>
 
 
 
-                <AnimatePresence>
-
-                    <motion.div
-
-                        initial={{ x: 0, opacity: 1 }}
-                        animate={{ x: 0, opacity: Drive ? 0 : 1 }}
-                    >
 
 
 
-                        {/* Deep Focus Box */}
-                        <StopWatch />
+
+                {/* Deep Focus Box */}
+                <div className="box cursor-pointer     bg-white/20 border border-white rounded-2xl p-2   h-64 w-[90vw] md:w-96 flex flex-col justify-between">
+                    <div className="flex justify-between items-center mb-1">
+                        <div className="flex items-center gap-2">
+                            <img width={35} src="diary.png" alt="Notes" />
+                            <h2 className="font-bold">Quick Notes</h2>
+                        </div>
+                        <button className="flex cursor-pointer items-center gap-2 bg-gradient-to-r from-blue-800 to-purple-800 hover:to-purple-500 text-white p-2 rounded-md text-sm">
+                            <img width={20} src="add.svg" alt="Add" />
+                            Add
+                        </button>
+                    </div>
+                    <hr className="border-white mb-2" />
+                    <textarea placeholder="Enter your short notes here" className="bg-slate-950 text-white p-2 rounded-xl text-sm  2xl:h-40 h-36 resize-none"></textarea>
+                </div>
 
 
 
-                    </motion.div>
-                </AnimatePresence>
+
 
             </div>
 
